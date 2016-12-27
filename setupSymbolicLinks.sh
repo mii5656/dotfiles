@@ -35,3 +35,6 @@ if [ ! -e $HOME/.vim/phpCsFixer/php-cs-fixer ]
         wget http://cs.sensiolabs.org/get/php-cs-fixer.phar -O $HOME/.vim/phpCsFixer/php-cs-fixer
         chmod a+x $HOME/.vim/phpCsFixer/php-cs-fixer
 fi
+
+#perl
+cp dotfiles/dict/perl.dict .vim/dict
