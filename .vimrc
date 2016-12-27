@@ -332,5 +332,14 @@ if has('mouse')
   endif
 endif
 
+NeoBundle 'petdance/vim-perl'
+NeoBundle 'hotchpotch/perldoc-vim'
+
+augroup filetypedetect
+autocmd! BufNewFile,BufRead *.t setf perl
+autocmd! BufNewFile,BufRead *.psgi setf perl
+autocmd! BufNewFile,BufRead *.tt setf tt2html
+augroup END
+
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
 filetype on
