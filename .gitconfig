@@ -1,0 +1,41 @@
+[core]
+    editor = vim
+[alias]
+    # alias一覧
+    alias = !git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+
+    # 基本機能
+    s  = status
+    ss = status -s
+    ch = checkout
+    co = commit
+    br = branch
+    sh = show
+
+    # ログをグラフで表示
+    lg = log --graph --branches --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
+    # ログを修正ラインで表示
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+    # ローカルブランチのリフレッシュ
+    refresh= !git fetch origin && git remote prune origin
+
+    # commit ammend
+    cam = commit --amend
+
+    # diff
+    d  = diff
+    d1 = diff HEAD~
+    d2 = diff HEAD~2
+    d3 = diff HEAD~3
+
+    # 指定した差分を調べる
+    dr  = "!f() { git diff "$1"^.."$1"; }; f"
+    lc  = "!f() { git ll "$1"^.."$1"; }; f"
+    diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+
+    # ファイル検索
+    f = "!git ls-files | grep -i"
+
+    # git grep
+    g = grep
