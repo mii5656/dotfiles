@@ -25,6 +25,12 @@ if [ -e .zshrc ]
 fi
 ln -sf ./dotfiles/.zshrc .zshrc
 
+#zsh setting
+if [ -e .gitconfig ]
+    then
+        rm .gitconfig
+fi
+ln -sf ./dotfiles/.gitconfig .gitconfig
 
 #PHP
 mkdir -p .vim/dict
