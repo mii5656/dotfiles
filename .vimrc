@@ -145,7 +145,6 @@ endfunction
 unlet s:hooks
 "}}}
 
-call neobundle#end()
 
 " Required:
 filetype plugin indent on
@@ -340,6 +339,8 @@ autocmd! BufNewFile,BufRead *.t setf perl
 autocmd! BufNewFile,BufRead *.psgi setf perl
 autocmd! BufNewFile,BufRead *.tt setf tt2html
 augroup END
+
+call neobundle#end()
 
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
 filetype on
