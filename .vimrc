@@ -56,6 +56,11 @@ NeoBundle 'Shougo/vimproc', {
   \     'unix' : 'make -f make_unix.mak',
   \    },
   \ }
+" GO言語
+NeoBundle 'fatih/vim-go'
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
 
 if has('lua')
     NeoBundleLazy 'Shougo/neocomplete.vim', {
