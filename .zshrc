@@ -162,7 +162,18 @@ case ${OSTYPE} in
 esac
  
 # vim:set ft=zsh:
+if [ -d $HOME/.anyenv ] ; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
+    # tmux対応
+    for D in `\ls $HOME/.anyenv/envs`
+    do
+        export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+    done
+fi
 
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bin:$PATH"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="${HOME}/.pyenv"
+#export PATH="${PYENV_ROOT}/bin:$PATH"
+#eval "$(pyenv init -)"
+
+#eval "$(chef shell-init zsh)"
